@@ -9,7 +9,9 @@ import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import LabelEncoder
-from sklearn.metrics import accuracy_score,classification_report
+from sklearn.metrics import accuracy_score, classification_report, precision_score, recall_score, f1_score, confusion_matrix
+import json
+import os
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
@@ -147,6 +149,7 @@ models = {
 }
 
 results = {}
+evaluation_records = []
 best_model = None
 best_accuracy = 0.0
 best_model_name = ""
@@ -167,6 +170,21 @@ for name, model in models.items():
     # Calculate the accuarcy of the model
     accuracy = accuracy_score(y_test,y_pred)
     results[name] = accuracy
+    # Calculate other evaluation metrics
+    precision = precision_score(y_test, y_pred, pos_label=1)
+    recall = recall_score(y_test, y_pred, pos_label=1)
+    f1 = f1_score(y_test, y_pred, pos_label=1)
+    cm = confusion_matrix(y_test, y_pred)
+
+    # Store a detailed evaluation record for this model
+    evaluation_records.append({
+        "model": name,
+        "accuracy": float(accuracy),
+        "precision": float(precision),
+        "recall": float(recall),
+        "f1_score": float(f1),
+        "confusion_matrix": cm.tolist()
+    })
 
     # Print the detailed classification report 
     print(f" {name} Accuracy: {accuracy:.4f}")
@@ -178,6 +196,18 @@ for name, model in models.items():
         best_model_name = name
 
 print(f"Conclusion: The best model is {best_model_name} with an accuracy of {best_accuracy:.4f}")
+
+# Save evaluation records to disk for later inspection
+output_csv = "evaluation_scores.csv"
+output_json = "evaluation_results.json"
+try:
+    eval_df = pd.DataFrame(evaluation_records)
+    eval_df.to_csv(output_csv, index=False)
+    with open(output_json, "w", encoding="utf-8") as f:
+        json.dump(evaluation_records, f, indent=2)
+    print(f"Saved evaluation scores to '{output_csv}' and '{output_json}'")
+except Exception as e:
+    print(f"Warning: failed to save evaluation results: {e}")
 
 # %% [markdown]
 # Visualization after training
