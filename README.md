@@ -32,6 +32,7 @@ The goal is to classify SMS messages as either "spam" or "ham" (not spam). The w
 - Machine learning models are trained, such as:
     - Naive Bayes (MultinomialNB)
     - Logistic Regression
+    - Random Forest Classifier
     - Support Vector Machine (SVM)
 - Hyperparameters may be tuned for better performance.
 
@@ -103,4 +104,5 @@ sms-spam/
 ## Contributing
 Contributions are welcome! If you’d like to suggest improvements — e.g., new modelling algorithms, additional feature engineering, or better documentation — please open an Issue or submit a Pull Request.
 Please ensure your additions are accompanied by clear documentation and, where relevant, updated evaluation results.
+
 
