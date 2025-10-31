@@ -7,7 +7,7 @@ This project implements an SMS spam detection system using machine learning tech
 
 The goal is to classify SMS messages as either "spam" or "ham" (not spam). The workflow includes data loading, preprocessing, feature extraction, model training, evaluation, and prediction.
 
-## Procedures
+## Contents
 
 #### 1. Data Loading
 
@@ -32,7 +32,6 @@ The goal is to classify SMS messages as either "spam" or "ham" (not spam). The w
 - Machine learning models are trained, such as:
     - Naive Bayes (MultinomialNB)
     - Logistic Regression
-    - Random Forest Classifier
     - Support Vector Machine (SVM)
 - Hyperparameters may be tuned for better performance.
 
@@ -98,7 +97,7 @@ sms-spam/
 |── spam.csv  
 ├── requirements.txt 
 ├── LICENSE
-├── image.jpg       
+├── iamge.jpg       
 └── README.md          
 ```
 ## Contributing
@@ -107,7 +106,3 @@ Please ensure your additions are accompanied by clear documentation and, where r
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](/LICENSE) file for details.
-
-
-
-
