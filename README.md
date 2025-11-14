@@ -48,7 +48,16 @@ The goal is to classify SMS messages as either "spam" or "ham" (not spam). The w
 
 - The trained model predicts whether new messages are spam or ham.
 
-### Usage Instructions
+## Process
+![Screenshot 244](/Screenshot%20(244).png)
+![Screenshot 245](/Screenshot%20(245).png)
+![Screenshot 246](/Screenshot%20(246).png)
+![Screenshot 247](/Screenshot%20(247).png)
+![Screenshot 248](/Screenshot%20(248).png)
+
+
+
+## Usage Instructions
 To run this project locally:
 1. Clone the repository:
 ```
@@ -97,7 +106,12 @@ sms-spam/
 |── spam.csv  
 ├── requirements.txt 
 ├── LICENSE
-├── iamge.jpg       
+├── iamge.jpg    
+├── Screenshot (244).png
+├── Screenshot (245).png
+├── Screenshot (246).png
+├── Screenshot (247).png
+├── Screenshot (248).png  
 └── README.md          
 ```
 ## Contributing
