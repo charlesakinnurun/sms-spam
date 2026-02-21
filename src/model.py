@@ -12,6 +12,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import accuracy_score, classification_report, precision_score, recall_score, f1_score, confusion_matrix
 import json
 import os
+import joblib
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
@@ -22,7 +23,7 @@ from sklearn.ensemble import RandomForestClassifier
 
 # %%
 try:
-    df = pd.read_csv("spam.csv",encoding="latin-1")
+    df = pd.read_csv("src\spam.csv",encoding="latin-1")
     print("Data loaded successfully!")
 except FileNotFoundError:
     print("Error: 'spam.csv' was not found. Please ensure the file is in same directory")
@@ -208,6 +209,26 @@ try:
     print(f"Saved evaluation scores to '{output_csv}' and '{output_json}'")
 except Exception as e:
     print(f"Warning: failed to save evaluation results: {e}")
+
+# Persist the best model and preprocessing artifacts using joblib
+try:
+    if best_model is not None:
+        os.makedirs("models", exist_ok=True)
+        model_path = os.path.join("models", "best_model.joblib")
+        vec_path = os.path.join("models", "tfidf_vectorizer.joblib")
+        le_path = os.path.join("models", "label_encoder.joblib")
+
+        joblib.dump(best_model, model_path)
+        joblib.dump(tfidf_vectorizer, vec_path)
+        joblib.dump(le, le_path)
+
+        print(f"Saved best model to '{model_path}'")
+        print(f"Saved TF-IDF vectorizer to '{vec_path}'")
+        print(f"Saved label encoder to '{le_path}'")
+    else:
+        print("No trained model available to save.")
+except Exception as e:
+    print(f"Warning: failed to save model artifacts: {e}")
 
 # %% [markdown]
 # Visualization after training
