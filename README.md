@@ -20,8 +20,6 @@ Engineered a machine learning workflow to detect and classify sms messages as ha
 -->
 - Data Loading
 
-<a href="/data/spam.csv">Check out dataset</a>
-
 | v1  | v2 |
 |-----|-----|
 | ham | Go until jurong point, crazy.. Available only ... |
@@ -30,38 +28,45 @@ Engineered a machine learning workflow to detect and classify sms messages as ha
 | ham | U dun say so early hor... U c already then say... |
 | ham | Nah I don't think he goes to usf, he lives aro... |
 
+<a href="/data/spam.csv">Check out dataset</a>
 
-- Data Preprocessing
+
+
+
+- <a href="/src/preprocessor.py">Data Preprocessing</a>
     - Rename columns for clarity
     - Check for missing values
     - Check for duplicated rows
-
-- Data Encoding
     - Initialize LabelEncoder to categorical text labels to numerical values
+    
 
 
-- Feature Engineering
+- <a href="/src/preprocessor.py">Feature Engineering</a>
     - Feature (X): ``df["message"] ``
 
     - Target (y): ``df["label_encoded"] ``
 
-- Data Splitting
+
+- <a href="/src/vectoriser.py">Data Splitting</a>
+    - 80% (training), 20% (testing)
 
 - Pre-Training Visualization
     - <a href="/assets/distribution.png">Distribution of Ham and Spam Messages</a>
 
     ![Distribution of Ham and Spam Messages](/assets/distribution.png)
 
-- Text Vectorization
+- <a href="/src/vectoriser.py">Text Vectorization</a>
     - Initialize the TF-IDF Vectorizer
 
-- Model Training and Comparison
+- <a href="/src/trainer.py">Model Training and Comparison</a>
     - Multinominal Naive Bayes
     - Random Forest
     - Logistic Regression
     - Support Vector Machine
 
-- Model Evaluation
+
+- <a href="/evaluation/evaluation_scores.csv">Model Evaluation</a>
+
 
     | Model                         | Accuracy |
     |--------------------------------|----------|
@@ -70,7 +75,7 @@ Engineered a machine learning workflow to detect and classify sms messages as ha
     | Support Vector Machine (SVC)   | 0.9785   |
     | Random Forest                  | 0.9758   |
 
-- Post-Training Visualization
+- <a href="/src/visualiser.py">Post-Training Visualization</a>
 
     -   <a href="/assets/evaluation.png">Classification Model Accuracy</a>
 
@@ -81,7 +86,9 @@ Engineered a machine learning workflow to detect and classify sms messages as ha
 
 
 
+- <a href="/src/predictor.py">Input Prediction</a>
 
+    ![Input Prediction](/assets/prediction_input.png)
 
 
 
