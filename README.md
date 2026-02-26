@@ -9,13 +9,15 @@ Engineered a machine learning workflow to detect and classify sms messages as ha
 
 
 ## Procedures
+
+<!--
 -   Import Libraries
     - pandas
     - scikit-learn
     - seaborn
     - matplotlib
     - numpy
-
+-->
 - Data Loading
 
 <a href="/data/spam.csv">Check out dataset</a>
