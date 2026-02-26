@@ -85,10 +85,10 @@ Engineered a machine learning workflow to detect and classify sms messages as ha
 
 
 
-
+<!--
 - <a href="/src/predictor.py">Input Prediction</a>
 
-    ![Input Prediction](/assets/prediction_input.png)
+    ![Input Prediction](/assets/prediction_input.png) -->
 
 
 
