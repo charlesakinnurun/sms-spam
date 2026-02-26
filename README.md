@@ -1,5 +1,7 @@
-# SMS Spam Detection
-![sms](assets/sms_header.jpg)
+<h1 align="center">Spam Filtering Engine</h1>
+
+
+![sms-header](/assets/sms_header.jpg)
 
 <!--This project implements an SMS spam detection system using machine learning techniques. The core logic and experiments are documented in `model.ipynb`.-->
 <!--
@@ -8,7 +10,7 @@
 Engineered a machine learning workflow to detect and classify sms messages as ham or spam. The workflow includes data loading, preprocessing, feature extraction, model training, evaluation, and prediction.-->
 
 
-## Procedures
+<h2 align="center">Workflow</h2>
 
 <!--
 -   Import Libraries
@@ -18,7 +20,9 @@ Engineered a machine learning workflow to detect and classify sms messages as ha
     - matplotlib
     - numpy
 -->
-- Data Loading
+
+- <h3><a href="/src/data_loader.py">Data Loading</a></h3>
+<!--- Data Loading-->
 
 | v1  | v2 |
 |-----|-----|
@@ -33,7 +37,8 @@ Engineered a machine learning workflow to detect and classify sms messages as ha
 
 
 
-- <a href="/src/preprocessor.py">Data Preprocessing</a>
+- <h3><a href="/src/preprocessor.py">Data Preprocessing</a></h3>
+
     - Rename columns for clarity
     - Check for missing values
     - Check for duplicated rows
@@ -41,31 +46,36 @@ Engineered a machine learning workflow to detect and classify sms messages as ha
     
 
 
-- <a href="/src/preprocessor.py">Feature Engineering</a>
+- <h3><a href="/src/preprocessor.py">Feature Engineering</a></h3>
+
     - Feature (X): ``df["message"] ``
 
     - Target (y): ``df["label_encoded"] ``
 
 
-- <a href="/src/vectoriser.py">Data Splitting</a>
+- <h3><a href="/src/vectoriser.py">Data Splitting</a></h3>
+
     - 80% (training), 20% (testing)
 
-- Pre-Training Visualization
+- <h3><a href="/assets/distribution.png">Pre-Training Visualization</a></h3>
+
     - <a href="/assets/distribution.png">Distribution of Ham and Spam Messages</a>
 
     ![Distribution of Ham and Spam Messages](/assets/distribution.png)
 
-- <a href="/src/vectoriser.py">Text Vectorization</a>
+- <h3><a href="/src/vectoriser.py">Text Vectorization</a></h3>
+
     - Initialize the TF-IDF Vectorizer
 
-- <a href="/src/trainer.py">Model Training and Comparison</a>
+- <h3><a href="/src/trainer.py">Model Training and Comparison</a></h3>
+
     - Multinominal Naive Bayes
     - Random Forest
     - Logistic Regression
     - Support Vector Machine
 
 
-- <a href="/evaluation/evaluation_scores.csv">Model Evaluation</a>
+- <h3><a href="/evaluation/evaluation_scores.csv">Model Evaluation</a></h3>
 
 
     | Model                         | Accuracy |
@@ -75,7 +85,7 @@ Engineered a machine learning workflow to detect and classify sms messages as ha
     | Support Vector Machine (SVC)   | 0.9785   |
     | Random Forest                  | 0.9758   |
 
-- <a href="/src/visualiser.py">Post-Training Visualization</a>
+- <h3><a href="/src/visualiser.py">Post-Training Visualization</a></h3>
 
     -   <a href="/assets/evaluation.png">Classification Model Accuracy</a>
 
