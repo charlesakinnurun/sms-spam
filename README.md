@@ -21,7 +21,7 @@ Engineered a machine learning workflow to detect and classify sms messages as ha
     - numpy
 -->
 
-- <h3><a href="/src/data_loader.py">Data Loading</a></h3>
+- <h4><a href="/src/data_loader.py">Data Loading</a></h4>
 <!--- Data Loading-->
 
 | v1  | v2 |
@@ -37,7 +37,7 @@ Engineered a machine learning workflow to detect and classify sms messages as ha
 
 
 
-- <h3><a href="/src/preprocessor.py">Data Preprocessing</a></h3>
+- <h4><a href="/src/preprocessor.py">Data Preprocessing</a></h4>
 
     - Rename columns for clarity
     - Check for missing values
@@ -46,28 +46,28 @@ Engineered a machine learning workflow to detect and classify sms messages as ha
     
 
 
-- <h3><a href="/src/preprocessor.py">Feature Engineering</a></h3>
+- <h4><a href="/src/preprocessor.py">Feature Engineering</a></h4>
 
     - Feature (X): ``df["message"] ``
 
     - Target (y): ``df["label_encoded"] ``
 
 
-- <h3><a href="/src/vectoriser.py">Data Splitting</a></h3>
+- <h4><a href="/src/vectoriser.py">Data Splitting</a></h4>
 
     - 80% (training), 20% (testing)
 
-- <h3><a href="/assets/distribution.png">Pre-Training Visualization</a></h3>
+- <h4><a href="/assets/distribution.png">Pre-Training Visualization</a></h4>
 
     - <a href="/assets/distribution.png">Distribution of Ham and Spam Messages</a>
 
     ![Distribution of Ham and Spam Messages](/assets/distribution.png)
 
-- <h3><a href="/src/vectoriser.py">Text Vectorization</a></h3>
+- <h4><a href="/src/vectoriser.py">Text Vectorization</a></h4>
 
     - Initialize the TF-IDF Vectorizer
 
-- <h3><a href="/src/trainer.py">Model Training and Comparison</a></h3>
+- <h4><a href="/src/trainer.py">Model Training and Comparison</a></h4>
 
     - Multinominal Naive Bayes
     - Random Forest
@@ -75,7 +75,7 @@ Engineered a machine learning workflow to detect and classify sms messages as ha
     - Support Vector Machine
 
 
-- <h3><a href="/evaluation/evaluation_scores.csv">Model Evaluation</a></h3>
+- <h4><a href="/evaluation/evaluation_scores.csv">Model Evaluation</a></h4>
 
 
     | Model                         | Accuracy |
@@ -85,7 +85,7 @@ Engineered a machine learning workflow to detect and classify sms messages as ha
     | Support Vector Machine (SVC)   | 0.9785   |
     | Random Forest                  | 0.9758   |
 
-- <h3><a href="/src/visualiser.py">Post-Training Visualization</a></h3>
+- <h4><a href="/src/visualiser.py">Post-Training Visualization</a></h4>
 
     -   <a href="/assets/evaluation.png">Classification Model Accuracy</a>
 
